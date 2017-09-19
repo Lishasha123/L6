@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				width: 400px;
+				height: 400px;
+				border: solid 1px red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById("canvas");
+			canvas.width="800";
+			canvas.height="800";
+			var context=canvas.getContext("2d");
+			  context.beginPath();
+              // 斜线
+			  var lg=context.createLinearGradient(0,0,300,300);
+			  lg.addColorStop(0,"red");
+			  lg.addColorStop(1,"green");
+			  context.fillStyle=lg;
+			  context.fillRect(0,0,300,300)
+			//直线
+			 var lg=context.createLinearGradient(400,0,400,300);
+			  lg.addColorStop(0,"red");
+			  lg.addColorStop(0.5,"blue");
+			  lg.addColorStop(1,"yellow");
+			  context.fillStyle=lg;
+			  context.fillRect(400,0,300,300);
+		//径向渐变	  
+			context.beginPath();
+			 var lg=context.createRadialGradient(100,500,0,100,500,100);
+			  lg.addColorStop(0.1,'rgb(255,0,0)');
+			  lg.addColorStop(1,'rgb(50,0,0)');
+			  context.fillStyle=lg;
+			  context.beginPath();
+			  context.arc(100,500,100,0,Math.PI*2,true);
+			  context.closePath();
+			  context.fill();
+			  
+			context.beginPath();
+			 var lg=context.createRadialGradient(300,500,10,500,500,50);
+			  lg.addColorStop(0.1,'rgb(255,0,0)');
+			  lg.addColorStop(1,'rgb(50,0,0)');
+			  context.fillStyle=lg;
+			  context.fillRect(250,400,400,300);
+		</script>
+	</body>
+</html>
