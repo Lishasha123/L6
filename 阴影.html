@@ -18,6 +18,14 @@
 			canvas.width="800";
 			canvas.height="800";
 			var context=canvas.getContext("2d");
-			
+			  context.beginPath();
+			  context.shadowOffsetX=10;
+			  context.shadowOffsetY=10;
+			  context.shadowColor="#1B6D85";
+			  context.shadowBlur=10;
+			  context.fillStyle="palegoldenrod";
+			  context.fillRect(200,200,200,200);
+
+		</script>
 	</body>
 </html>
